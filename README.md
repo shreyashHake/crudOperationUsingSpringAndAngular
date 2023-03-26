@@ -1,6 +1,6 @@
-## Customer Api
+# Customer Api
 
-# Functionalities : 
+## Functionalities : 
 * Add customer
 * Update customer
 * Delete customer
