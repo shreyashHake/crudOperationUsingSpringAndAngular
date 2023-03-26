@@ -1,28 +1,23 @@
-package com.project.springCrud.entity;
+package com.project.springCrud.DTO;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
-@Entity
-@Table(name = "customer")
-public class Customer {
-    @Id
-    @Column(name = "customer_id", length = 50)
+public class CustomerDTO {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int customerId;
 
-    @Column(name = "customer_name", length = 50)
     private String customerName;
 
-    @Column(name = "customer_address", length = 79)
     private String customerAddress;
 
-    @Column(name = "customer_mobile", length = 12)
     private int mobile;
 
-    public Customer(String customerName, String customerAddress, int mobile) {
+    public CustomerDTO() {
     }
 
-    public Customer(int customerId, String customerName, String customerAddress, int mobile) {
+    public CustomerDTO(int customerId, String customerName, String customerAddress, int mobile) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerAddress = customerAddress;

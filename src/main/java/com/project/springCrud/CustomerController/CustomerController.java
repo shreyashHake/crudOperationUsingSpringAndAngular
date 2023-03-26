@@ -1,5 +1,9 @@
 package com.project.springCrud.CustomerController;
 
+import com.project.springCrud.DTO.CustomerDTO;
+import com.project.springCrud.DTO.CustomerSaveDTO;
+import com.project.springCrud.Service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -7,9 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1/customer")
 public class CustomerController {
 
-    @PostMapping(path = "/save")
-    public String saveCustomer(@RequestBody CustomerDTO customerDTO) {
+    @Autowired
+    private CustomerService customerService;
 
+    @PostMapping(path = "/save")
+    public String saveCustomer(@RequestBody CustomerSaveDTO customerSaveDTO) {
+        return customerService.addCustomer(customerSaveDTO);
     }
 
 }
