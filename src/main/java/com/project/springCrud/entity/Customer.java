@@ -19,15 +19,19 @@ public class Customer {
     @Column(name = "customer_mobile", length = 12)
     private int mobile;
 
-    public Customer(String customerName, String customerAddress, int mobile) {
-    }
-
     public Customer(int customerId, String customerName, String customerAddress, int mobile) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerAddress = customerAddress;
         this.mobile = mobile;
     }
+    public Customer( String customerName, String customerAddress, int mobile) {
+        this.customerName = customerName;
+        this.customerAddress = customerAddress;
+        this.mobile = mobile;
+    }
+
+
 
     public int getCustomerId() {
         return customerId;
