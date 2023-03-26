@@ -31,7 +31,8 @@ public class Customer {
         this.mobile = mobile;
     }
 
-
+    public Customer() {
+    }
 
     public int getCustomerId() {
         return customerId;
